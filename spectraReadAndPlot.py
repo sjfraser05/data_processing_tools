@@ -37,9 +37,9 @@ for count, iFile in enumerate(dirList):
 
     y2 = y1
     #plt.plot(x1, snv(y1))
-    #y2 = y1 - rubberband(x1, y1)
-    #y2 = savgol_filter(y2, 15, 3, deriv=0)
-    #y2 = snv(y2)
+    y2 = y1 - rubberband(x1, y1)
+    y2 = savgol_filter(y2, 15, 3, deriv=0)
+    y2 = snv(y2)
     col = float(0.5*float(count)/float(nList))
 
     plt.plot(x1, y2, label=str(iFile.split('.spc')[0]))
