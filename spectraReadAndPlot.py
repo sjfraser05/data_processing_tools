@@ -21,6 +21,8 @@ os.chdir(directory)
 dirList = glob.glob(choice)
 nList = len(dirList)
 aveArray = np.zeros((1, 3101))
+
+colors = plt.cm.rainbow(np.linspace(0,1,nList))
 for count, iFile in enumerate(dirList):
 
     if choice == "*.spc":
@@ -37,12 +39,12 @@ for count, iFile in enumerate(dirList):
 
     y2 = y1
     #plt.plot(x1, snv(y1))
-    y2 = y1 - rubberband(x1, y1)
+    #y2 = y1 - rubberband(x1, y1)
     y2 = savgol_filter(y2, 15, 3, deriv=0)
-    y2 = snv(y2)
+    #y2 = snv(y2)
     col = float(0.5*float(count)/float(nList))
 
-    plt.plot(x1, y2, label=str(iFile.split('.spc')[0]))
+    plt.plot(x1, y2, label=str(iFile.split('.spc')[0]), color=colors[count])
 
     #aveArray = np.vstack([aveArray, y2])
 
@@ -54,6 +56,6 @@ for count, iFile in enumerate(dirList):
 plt.xlabel('Raman Shifts ($cm^{-1}$)', fontsize=16)
 plt.ylabel('Raman Intensity', fontsize=16)
 #plt.title(directory.split('\\')[-1])
-plt.legend()
+#plt.legend()
 plt.show()
 
