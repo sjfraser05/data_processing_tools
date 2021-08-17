@@ -10,9 +10,6 @@ from filterpy.kalman import KalmanFilter
 from filterpy.common import Q_discrete_white_noise
 from scipy.linalg import pinv
 
-#H = np.array([[1, 0.]])
-#z0 = 3.2
-#x = np.dot(pinv(H), z0)
 
 def matprint(mat, fmt="g"):
     col_maxes = [max([len(("{:"+fmt+"}").format(x)) for x in col]) for col in mat.T]
