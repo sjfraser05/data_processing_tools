@@ -1,6 +1,6 @@
 import numpy as np
 
-
+#Performs Standard Normal Variate Normalization.
 def snv(y):
     average = np.mean(y)
     standardDev = np.std(y)
