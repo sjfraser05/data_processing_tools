@@ -16,19 +16,18 @@ choice = easygui.choicebox(msg, title, choices)
 directory = easygui.diropenbox()
 os.chdir(directory)
 dirList = glob.glob(choice)
-print(dirList)
 nList = len(dirList)
-print(nList)
+
 boxcar = 30
 aveArray = np.zeros((1,3101), int)
 SIMCAray = np.arange(200, 3301, 1, int)
-print(nList - boxcar)
+
 
 np.savetxt("DirList.csv", dirList, delimiter=',', fmt='% s')
 
 for count, iFile in enumerate(dirList):
     #f = spc.File(iFile)
-    print(count)
+
     if count > (nList - boxcar):
         break
     elif count > boxcar:
