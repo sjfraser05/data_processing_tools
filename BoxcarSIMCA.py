@@ -59,16 +59,6 @@ for count, iFile in enumerate(dirList):
 
 
 
-    #f.plot()  # plot data
-    #filename = str(boxcar) + '_ave_' + iFile + '.csv'
-    #x1 = np.reshape(x1, (1, 3101))
-    #writeData = np.vstack([x1, aveData])
-
-    #np.savetxt(filename, SIMCAray, delimiter=',', fmt='%d')  #np.transpose(writeData)
-    #plt.plot(x1, aveData)
-
-    #plt.plot(x2[index], y1[index], "x")
-    #plt.plot(x1[index], y1[index], "x")
 plt.plot(np.transpose(SIMCAray))
 
 filename = "SIMCA Format Array_CRF_" + str(boxcar) + '_ave_' + '.csv'
